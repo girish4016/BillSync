@@ -1,19 +1,19 @@
-import { useState } from "react";
-import { Button } from "./common/shadcn/ui/button";
-
-import { NavBar } from "./common/components/Navbar/NavBar";
+import { useRoutes } from "react-router-dom";
+import { HomeRoute } from "./common/constants/route-name";
+import { HomeRoutes } from "./common/routes/HomeRoutes";
+import { GroupsRoutes } from "./components/Groups/GroupsRoutes";
+import { FriendsRoutes } from "./components/Friends/FriendsRoutes";
+import { ExpensesRoutes } from "./components/Expenses/ExpensesRoutes";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const routes = useRoutes([
+    { path: HomeRoute, element: <HomeRoutes /> },
+    ...GroupsRoutes,
+    ...FriendsRoutes,
+    ...ExpensesRoutes,
+  ]);
 
-  return (
-    <div>
-      <NavBar isHomePage={true} />
-      <Button onClick={() => setCount((prev) => prev + 1)}>
-        tap to increase : {count}
-      </Button>
-    </div>
-  );
+  return <div>{routes}</div>;
 }
 
 export default App;
