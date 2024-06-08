@@ -1,9 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/common/shadcn/ui/avatar";
 import { Button } from "@/common/shadcn/ui/button";
-import { TfiMenu } from "react-icons/tfi";
-
-import { navbarItems } from "./NavBarItems";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,6 +9,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/common/shadcn/ui/dropdown-menu";
+import { TfiMenu } from "react-icons/tfi";
+
+import { navbarItems } from "./NavBarItems";
 
 export const NavBar = () => {
   const navigate = useNavigate();
@@ -50,9 +50,11 @@ export const NavBar = () => {
           <DropdownMenuContent className="sm:hidden">
             <DropdownMenuLabel>Menu</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Groups</DropdownMenuItem>
-            <DropdownMenuItem>Friends</DropdownMenuItem>
-            <DropdownMenuItem>Expenses</DropdownMenuItem>
+            {navbarItems.map((item) => (
+              <DropdownMenuItem onClick={() => navigate(item.path)}>
+                {item.name}
+              </DropdownMenuItem>
+            ))}
             <DropdownMenuItem>Profile Settings</DropdownMenuItem>
             <DropdownMenuItem className="text-red-400">
               Log Out
