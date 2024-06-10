@@ -4,6 +4,7 @@ import { HomeRoutes } from "./common/routes/HomeRoutes";
 import { GroupsRoutes } from "./components/Groups/GroupsRoutes";
 import { FriendsRoutes } from "./components/Friends/FriendsRoutes";
 import { ExpensesRoutes } from "./components/Expenses/ExpensesRoutes";
+import { ProfileSettingsRoutes } from "./components/ProfileSettings/ProfileSettingsRoute";
 
 function App() {
   const routes = useRoutes([
@@ -11,6 +12,7 @@ function App() {
     ...GroupsRoutes,
     ...FriendsRoutes,
     ...ExpensesRoutes,
+    ...ProfileSettingsRoutes,
   ]);
 
   return <div>{routes}</div>;

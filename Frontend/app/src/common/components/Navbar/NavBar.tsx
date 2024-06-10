@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/common/shadcn/ui/dropdown-menu";
 import { TfiMenu } from "react-icons/tfi";
+import { ProfileSettingsRoute } from "@/common/constants/route-name";
 
 import { navbarItems } from "./NavBarItems";
 
@@ -55,7 +56,6 @@ export const NavBar = () => {
                 {item.name}
               </DropdownMenuItem>
             ))}
-            <DropdownMenuItem>Profile Settings</DropdownMenuItem>
             <DropdownMenuItem className="text-red-400">
               Log Out
             </DropdownMenuItem>
@@ -66,7 +66,9 @@ export const NavBar = () => {
         </Button>
         <Avatar className="text-xl h-12 w-12 cursor-pointer">
           <AvatarImage src="" />
-          <AvatarFallback>BS</AvatarFallback>
+          <AvatarFallback onClick={() => navigate(ProfileSettingsRoute)}>
+            BS
+          </AvatarFallback>
         </Avatar>
       </div>
     </div>
