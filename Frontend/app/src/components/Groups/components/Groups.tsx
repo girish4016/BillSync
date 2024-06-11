@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Input } from "@/common/shadcn/ui/input";
 import { Button } from "@/common/shadcn/ui/button";
 import {
@@ -13,13 +14,22 @@ import { IoSearchSharp } from "react-icons/io5";
 import { IoMdAddCircle } from "react-icons/io";
 
 import { NavBar } from "@/common/components/Navbar/NavBar";
+import { GroupDetailsRoute } from "@/common/constants/route-name";
 
 export const Groups = () => {
+  const navigate = useNavigate();
+
   const rows = [];
 
   for (let i = 0; i < 50; i++) {
     rows.push(
-      <TableRow key={i} className="text-slate-800 cursor-pointer h-[5rem]">
+      <TableRow
+        key={i}
+        className="text-slate-800 cursor-pointer h-[5rem]"
+        onClick={() => {
+          navigate(GroupDetailsRoute.replace(":groupId", String(i)));
+        }}
+      >
         <TableCell className="font-medium max-w-[7rem] whitespace-nowrap overflow-hidden text-ellipsis">
           Rishikesh
         </TableCell>
