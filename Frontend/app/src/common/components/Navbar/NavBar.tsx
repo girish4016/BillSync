@@ -51,12 +51,17 @@ export const NavBar = () => {
             <DropdownMenuLabel>Menu</DropdownMenuLabel>
             <DropdownMenuSeparator />
             {navbarItems.map((item) => (
-              <DropdownMenuItem onClick={() => navigate(item.path)}>
+              <DropdownMenuItem
+                onClick={() => navigate(item.path)}
+                className="cursor-pointer"
+              >
                 {item.name}
               </DropdownMenuItem>
             ))}
-            <DropdownMenuItem>Profile Settings</DropdownMenuItem>
-            <DropdownMenuItem className="text-red-400">
+            <DropdownMenuItem className="cursor-pointer">
+              Profile Settings
+            </DropdownMenuItem>
+            <DropdownMenuItem className="text-red-400 cursor-pointer">
               Log Out
             </DropdownMenuItem>
           </DropdownMenuContent>
