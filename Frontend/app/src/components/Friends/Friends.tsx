@@ -12,6 +12,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/common/shadcn/ui/avatar";
 import { IoSearchSharp } from "react-icons/io5";
 import { IoMdAddCircle } from "react-icons/io";
+import { MdPersonRemove } from "react-icons/md";
 
 import { NavBar } from "@/common/components/Navbar/NavBar";
 
@@ -35,7 +36,8 @@ export const Friends = () => {
           You owe ₹250
         </TableCell>
         <TableCell className="text-right max-sm:hidden">
-          <Button className="w-full sm:w-auto bg-red-500 hover:bg-red-600">
+          <Button className="w-full sm:w-auto bg-white border-2 border-red-300 text-red-400 hover:bg-red-500 hover:text-white gap-2">
+            <MdPersonRemove size={16} />
             Remove Friend
           </Button>
         </TableCell>
