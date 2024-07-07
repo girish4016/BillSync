@@ -32,13 +32,11 @@ export const Friends = () => {
           </div>
         </TableCell>
         <TableCell className="max-sm:hidden">01/03/2023</TableCell>
-        <TableCell className="text-red-700 max-sm:text-right">
-          You owe ₹250
-        </TableCell>
-        <TableCell className="text-right max-sm:hidden">
-          <Button className="w-full sm:w-auto bg-white border-2 border-red-300 text-red-400 hover:bg-red-500 hover:text-white gap-2">
+        <TableCell className="text-red-700">You owe ₹250</TableCell>
+        <TableCell className="text-right">
+          <Button className="w-fit sm:w-auto bg-white border-2 border-red-300 text-red-400 hover:bg-red-500 hover:text-white gap-2">
             <MdPersonRemove size={16} />
-            Remove Friend
+            <p className="max-sm:hidden">Remove Friend</p>
           </Button>
         </TableCell>
       </TableRow>
@@ -74,8 +72,8 @@ export const Friends = () => {
               <TableRow>
                 <TableHead>Friend</TableHead>
                 <TableHead className="max-sm:hidden">Added at</TableHead>
-                <TableHead className="max-sm:text-right">Amount</TableHead>
-                <TableHead className="max-sm:hidden text-right"></TableHead>
+                <TableHead>Amount</TableHead>
+                <TableHead className="text-right" />
               </TableRow>
             </TableHeader>
             <TableBody>{rows}</TableBody>
