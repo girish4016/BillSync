@@ -35,7 +35,7 @@ export const GroupDetails = () => {
     <div className="contain-paint">
       <NavBar />
       <div className="flex flex-col px-10 max-sm:px-3">
-        <div className="mt-6 flex items-center gap-2 sticky top-0 max-sm:flex-col">
+        <div className="py-6 z-10 flex bg-white items-center gap-2 sticky top-0 max-sm:flex-col">
           <span className="text-2xl text-slate-800 max-sm:mb-3 max-sm:border-b-4">
             {groupDetails.name}
           </span>
@@ -52,7 +52,7 @@ export const GroupDetails = () => {
             Settle Up
           </Button>
         </div>
-        <div className="flex w-full z-0 py-6">
+        <div className="flex w-full z-0 pb-6">
           <Table>
             <TableCaption>List of Expenses.</TableCaption>
             <TableHeader className="bg-slate-100">
